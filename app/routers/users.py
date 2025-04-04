@@ -42,15 +42,15 @@ def login(credentials: schemas.UserLogin, db: Session = Depends(get_db)):
     access_token = auth.create_access_token(data={"sub": user.username})
     return {"access_token": access_token, "token_type": "bearer"}
 
-# @router.get("/users")
-# async def get_users(db: Session = Depends(get_db)):
-#     users = db.query(models.User).all()
-#     return users
-
-@router.get("/")
+@router.get("/users")
 async def get_users(db: Session = Depends(get_db)):
     users = db.query(models.User).all()
     return users
+
+# @router.get("/")
+# async def get_users(db: Session = Depends(get_db)):
+#     users = db.query(models.User).all()
+#     return users
 
 def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
     payload = auth.decode_access_token(token)
