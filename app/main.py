@@ -12,12 +12,9 @@ load_dotenv()
 
 app = FastAPI()
 
-
-ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS")
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[ALLOWED_ORIGINS],
+    allow_origins=["https://frontend-task-eta-one.vercel.app" ],
     allow_credentials=True,
     allow_methods=["*"],  
     allow_headers=["*"],  
