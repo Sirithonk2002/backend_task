@@ -52,12 +52,18 @@ class TaskUpdate(BaseModel):
     end_date: Optional[date]
     assignee_ids: Optional[List[int]] = None  
 
+# class TaskResponse(TaskBase):
+#     id: int
+#     user_id: Optional[int] = None  
+#     assignees: List[UserResponse] = []
+
+#     class Config:
+#         orm_mode = True
+
 class TaskResponse(TaskBase):
     id: int
     user_id: Optional[int] = None  
     assignees: List[UserResponse] = []
 
     class Config:
-        orm_mode = True
-
-
+        from_attributes = True
