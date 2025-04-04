@@ -1,4 +1,3 @@
-
 from sqlalchemy import Column, Integer, String, Date, ForeignKey
 from sqlalchemy import Enum as PgEnum 
 from sqlalchemy.orm import relationship
