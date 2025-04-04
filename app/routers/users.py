@@ -14,7 +14,8 @@ ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 60))
 
 router = APIRouter(prefix="/users", tags=["users"])
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="users/login")
+# oauth2_scheme = OAuth2PasswordBearer(tokenUrl="users/login")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/users/login")
 
 @router.post("/register")
 def register(user_data: schemas.UserCreate, db: Session = Depends(get_db)):
@@ -41,7 +42,12 @@ def login(credentials: schemas.UserLogin, db: Session = Depends(get_db)):
     access_token = auth.create_access_token(data={"sub": user.username})
     return {"access_token": access_token, "token_type": "bearer"}
 
-@router.get("/users")
+# @router.get("/users")
+# async def get_users(db: Session = Depends(get_db)):
+#     users = db.query(models.User).all()
+#     return users
+
+@router.get("/")
 async def get_users(db: Session = Depends(get_db)):
     users = db.query(models.User).all()
     return users

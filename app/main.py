@@ -34,6 +34,10 @@ def ping_db(db: Session = Depends(get_db)):
     except Exception as e:
         return {"db": "error", "details": str(e)}
     
+@app.post("/ping-db")
+def ping_db_post(db: Session = Depends(get_db)):
+    return ping_db(db)
+    
 @app.get("/")
 def read_root():
     return {"message": "Hello World"}
