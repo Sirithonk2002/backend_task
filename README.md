@@ -21,7 +21,7 @@ cd python3 -m venv venv
 
 3. Activate the virtual environment
 ```bash
-cd .\venv\Scripts\activate
+cd source \venv\Scripts\activate
 ```
 
 4. Install dependencies
@@ -37,7 +37,10 @@ DATABASE_URL = "postgresql://task_admin:12345678@localhost:5432/task_app"
 ```bash
 pip install python-dotenv
 ```
-7. pip install alembic
+7. Alembic
+```bash
+pip install alembic
+```
 
 7. Run the application
 ```bash
