@@ -2,6 +2,9 @@
 
 This is the backend API for the Task Manager application, developed using **FastAPI** and **SQLAlchemy**. It provides functionality to manage tasks, including creating, updating, deleting, and organizing tasks by their status (To Do, In Progress, Done).
 
+## Use Render for backend deployment
+    https://backend-task-6pav.onrender.com
+
 ## Requirements
 
 - Python 3.7+
@@ -12,7 +15,7 @@ This is the backend API for the Task Manager application, developed using **Fast
 - CORS middleware for cross-origin requests
 
 ```bash
-git clone https://github.com/your-repo-name/task-manager-backend.git
+git clone https://github.com/Sirithonk2002/backend_task.git
 ```
 2. Create a virtual environment
 ```bash
