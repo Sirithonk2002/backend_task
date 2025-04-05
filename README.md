@@ -19,35 +19,37 @@ git clone https://github.com/Sirithonk2002/backend_task.git
 ```
 2. Create a virtual environment
 ```bash
-cd python3 -m venv venv
+    python -m venv venv
+    venv\Scripts\activate
 ```
 
-3. Activate the virtual environment
+3. Install dependencies
 ```bash
-cd venv\Scripts\activate
+    pip install -r requirements.txt
 ```
 
-4. Install dependencies
+4. Set Up the Database
 ```bash
-cd pip install -r requirements.txt
+    pip install -r requirements.txt
 ```
 
 5. Set up the database
-```bash
-DATABASE_URL = "postgresql://task_admin:12345678@localhost:5432/task_app"
+6. ```bash
+DATABASE_URL=postgresql://task_admin:hYqIK8bRgevqPyf7VRZ2KD77ddjRck9t@dpg-cvn7e42dbo4c73bftkr0-a.oregon-postgres.render.com/task_app_kpou
 ```
-6. 
+
+7. Install python-dotenv
 ```bash
-pip install python-dotenv
+    pip install python-dotenv
 ```
 7. Alembic
 ```bash
-pip install alembic
+    pip install alembic
 ```
 
 7. Run the application
 ```bash
-cd uvicorn app.main:app --reload
+    uvicorn app.main:app --reload
 ```
 
 8. Testing the API
